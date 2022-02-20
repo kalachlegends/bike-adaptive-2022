@@ -1,0 +1,793 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+$gr1:#f7f7f7;
+$b1:#4d4959;
+
+%ff{
+	font-family: 'Lato', sans-serif;
+
+}
+
+body{
+	
+	@media (max-width: 650px) {
+		&.lock{
+			overflow: hidden;
+		}
+	}
+	@extend %ff
+
+}
+.header {
+
+	.active{
+		span {
+			transform: scale(0);
+		}
+	}
+	.active:before{
+		transition: 0.2s; 
+		top: 9px;
+		background: white;
+		transform: rotate(45deg);
+	}.active:after{
+		transition: 0.5s; 
+		bottom: 9px;
+		background: white;
+		transform: rotate(-45deg);
+	}
+	&_burger {
+
+		display: none;
+		@media (max-width: 650px) {
+			
+			display: block;
+			position: fixed;
+			right: 20px;
+			top: 10px;
+			width: 30px;
+			height: 20px;
+			z-index: 33;
+			
+			span{
+				width: 100%;
+				position: absolute;
+				background: $b1;
+				height: 2px;
+				
+				top: 9px;	
+			}
+			&:before,
+			&:after{
+				content: '';
+				width: 100%;
+				position: absolute;
+				background: $b1;
+				height: 2px;
+				left: 0;
+			}
+			&:before{
+				top: 0;
+
+			}
+			&:after{
+				bottom: 0;
+			}
+			
+		}
+	}
+}
+
+.header {
+	max-width: 100%;
+
+	min-height: 100%;
+
+	background: url('../img/bike-main-image.jpg.png') center /cover no-repeat;
+	padding-bottom: 40px;
+
+}
+.container {
+
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.navgation__header {
+	display: flex;
+	justify-content: center;
+	@media (max-width: 650px) {
+		position: fixed;
+		left: 0;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+		opacity:  0.7;
+		
+		transition: 0.6s;
+		background: #000;
+
+		&.active{
+			top: 0px;
+
+		}
+	}
+
+}
+.navgation__header_list {
+	display: flex; 
+	a{
+		text-decoration: none;
+		@media (max-width: 1000px) {
+			color: white;
+		}
+		color: $b1;
+		&:hover{
+			color: #080218;
+			transition-duration: 0.4s;
+		}
+	}
+	@media (max-width: 650px) {
+		display: block;
+
+		overflow: auto;
+
+	}
+	li{
+
+		font-size: 13px;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 68px 15px;
+		color: $b1;
+		@media (max-width: 650px) {
+			padding: 12px 0px;
+			text-align: center;
+			&:first-child{
+				margin-top: 20px;
+			}
+
+		}
+	}
+
+}
+.navgation__header_list___item {
+
+}
+.navgation__header_list___logo{
+	padding: 35px 15px;
+	img{
+
+	}
+}
+.info {background:  #f7f7f7;}
+
+.info__block {
+	padding: 92px 0px 140px 0px;
+	@media (max-width: 650px) {
+		padding: 20px 0px 20px 0px;
+	}
+}
+.info__row{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.info__logo {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title { 
+	text-transform: uppercase;	
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #353738;
+}
+.info__title{
+	padding: 30px 0px;
+
+}
+.info__text {
+
+}
+.text {text-align: center;
+	color: #848789;
+	font-size: 18px;
+	line-height: 35px;
+
+}
+.vintage {
+}
+.vintage_row {
+	display: flex;	
+
+	@media (max-width: 1000px){
+		flex-direction: column;	
+		flex: 1 1 auto;
+	}
+}
+
+.bike__main__img  {
+
+	background: url("../img/bike-vintage-img.png") center / cover no-repeat;
+
+	flex: 1 1 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:hover{
+
+	}
+	@media  (max-width: 1000px) {
+		flex: 0 0 100%;
+		padding:  33%;
+
+	}
+
+}
+
+
+.vintage__block {
+	display: flex;	
+	flex-direction: column;	
+	flex: 	1 1 40%;
+	position: relative;
+
+
+
+}
+.vintage__title{
+	padding: 30px 0px;
+}
+.vintage__block__subtitle{
+	padding: 60px;
+	display: flex;	
+	justify-content: center;	
+	align-items: center;	
+	flex-direction: column;	
+	position: relative;
+	
+
+	@media (max-width: 650px) {
+		padding: 30px;
+	}
+}
+.bike__seat__img{
+	background: url("../img/seat-bike.png") center / cover no-repeat;
+
+	padding: 22%
+}
+
+.vintage__text{
+	position: relative;
+	&:after
+	{content: '';
+		display: block;
+		
+		background: #d7d7d7;
+		height: 1px;
+		margin: 0 auto; 
+		width: 50px;
+		margin-top: 30px;
+	}
+
+}
+.vintage__block__subtitle{
+	position: relative;
+	&:before{
+		content: '';
+
+		position: absolute;
+		left: 46%;
+		top:100%;
+		margin-right: -20px;
+		border: 20px solid transparent; border-top: 20px solid white;
+	}
+}
+.boriosa {
+
+	&_row {
+		display: flex;
+		position: relative;
+
+		@media (max-width: 1000px){
+			flex-direction: column;	
+			flex: 1 1 auto;
+		}
+	}
+	&__block {
+		
+		flex:1 1 33%;
+		flex-direction: column;
+		@media (max-width: 1000px){
+			order: 	2;
+			
+		}
+		position: relative;
+
+		&__subtitle {
+			position: relative;
+			&:before{
+				content: '';
+
+				position: absolute;
+
+				left: 46%;
+				top: 100%;
+
+				border: 20px solid transparent; border-top: 20px solid white;
+			}
+			display: flex;
+			flex-direction: column;
+			padding: 60px;
+			justify-content: center;
+			align-items: center;
+			@media (max-width: 650px) {
+				padding: 30px;
+			}
+			@media (max-width: 420px) {
+				padding: 10px;
+			}
+		}
+	}
+	&__logo {
+		
+	}
+	&__title {
+		padding: 20px 0px;
+	}
+	&__text {
+		&:after
+		{content: '';
+			display: block;
+			
+			background: #d7d7d7;
+			height: 1px;
+			margin: 0 auto; 
+			width: 50px;
+			margin-top: 30px;
+		}
+	}
+}
+.boriosa {
+	&__seat-img {
+		background: url("../img/seat-bike2.png") center / cover no-repeat;
+
+		padding: 22%
+	}
+	&__main-img {
+		background: url("../img/bike-vintage-img2.png") center / cover no-repeat;
+		max-width: 100%;	
+		max-height: 100%;
+		flex: 1 1 59%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media (max-width: 1000px){
+			
+			display: none;	
+			
+		}
+	}
+}
+.retrobike {
+	&__row {
+		display: flex;	
+	}
+	&__main-img {
+		background: url("../img/bike-vintage-img3.png") center / cover no-repeat;
+		max-width: 100%;	
+		max-height: 100%;
+		flex: 1 1 41.1%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: 1000px){
+			display: none;	
+		}
+	}
+	&__main-img-dop {
+		background: url("../img/bike-vintage-img4.png") center / cover no-repeat;
+		max-width: 100%;	
+		max-height: 100%;
+		flex: 1 1 40%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: 1000px){
+			display: none;	
+		}
+	}
+	&__block {
+		display: flex;	
+		
+		flex: 	1 1 30%;
+		&__subtitle {
+			position: 	relative;
+			display: flex;	
+			&:before{
+				content: '';
+
+				position: absolute;
+
+				left: 46%;
+				top: 100%;
+
+				border: 20px solid transparent; border-top: 20px solid white;
+			}
+			
+			justify-content: center;	
+			flex-direction: column;	
+			padding: 60px;	
+			@media (max-width: 650px) {
+				padding: 30px;
+			}
+			@media (max-width: 420px) {
+				padding: 10px;
+			}
+		}
+	}
+
+	&__logo {
+		margin: 0 auto;
+	}
+	&__title {
+		padding: 30px  0px;	
+
+	}
+	&__text {&:after
+		{
+			content: '';
+			display: block;
+			
+			background: #d7d7d7;
+			height: 1px;
+			margin: 0 auto; 
+			width: 50px;
+			margin-top: 30px;
+		}}
+		&__seat-img {
+			background: url("../img/seat-bike3.png") center / cover no-repeat;
+			padding: 22%
+		}
+	}
+	.retrobike__block__row{
+
+		display: flex;	
+		flex-direction: column;	
+	}
+	.swiper {
+		background: 	#f7f7f7;
+	}
+	.mySwiper {
+	}
+	.swiper-wrapper {
+	}
+	.swiper-slide {
+	}
+	.social {
+		position: relative;
+		z-index: 1;
+		padding: 140px 0px;	
+		text-align: center;	
+		@media (max-width: 1000px) {
+			padding: 80px 0px;
+		}
+
+		&__row {
+			h2{
+				padding: 	20px 0px;
+				font-size: 	18px;
+				font-weight: bold;	
+				word-spacing: 5px;
+				color: #7b7c7c; 
+				.ffl {
+					font-weight: normal;	
+					color: #a9afb3; 
+				}
+
+			}
+		}
+		&__logo {
+
+		}
+	}
+
+
+	.textslide{
+		color: 	#a9afb3;
+		font-size: 24px;
+		width: 65%;
+		margin: 	0 auto;
+
+	}
+
+	.mySwiper {
+		overflow-x: 	hidden;
+
+		.swiper-pagination-bullet{
+			width: 10px;	
+			height: 10px;	
+			font-size: 12px;	
+			line-height: 14px;
+			background-color: 	#a9afb3;	
+		}
+		.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fractionn {
+			bottom: 70px;	
+			@media (max-width: 1000px) {
+				bottom: 20px;
+			}
+		}
+	}
+	.shop__row__block1__row{
+		flex-direction: row;
+		display: flex;
+
+
+		.img-shop1 {
+			background: url("../img/shop-img1.png") center / cover no-repeat;
+			padding: 22%;
+			flex: 1 1 10%;
+			position: relative;
+
+		}
+		.img-shop2 {
+			background: url("../img/shop-img2.png") center / cover no-repeat;
+			flex: 1 1 10%;
+			padding: 20%
+		}
+	}
+	.bg-hover:after{
+		
+		content: url('');
+		width:100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+
+	}
+	.bg-hover{
+		img{
+			visibility: hidden;
+		}
+
+	}
+	.pr{
+		position: relative;
+	}
+	.bg-hover:hover:after{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		content: url('../img/shop-now.png');
+		transition: 0.5s;
+
+		background-color: rgba(118, 196, 165, 0.8);
+		
+		background-image: url('../img/Icon.png') no-repeat ;
+
+
+	}
+
+	.shop {
+
+		&__row {
+			display: flex;
+			flex-direction: row;
+			@media (max-width: 1000px) {
+				flex-direction: column;
+			}
+			&__block1 {
+				flex-direction: row;
+				flex: 1 1 33%;
+				
+				.img-shop3 {
+					background: url("../img/shop-img3.png") center / cover no-repeat;
+					padding: 20%
+				}
+			}
+			&__block2 {
+				display: flex;
+				flex-direction: row;
+				flex: 1 1 33%;
+
+				.img-shop4 {
+					background: url("../img/shop-img4.png") center / cover no-repeat;
+					padding: 25%
+				}
+
+				.img-shop5 {
+					background: url("../img/shop-img5.png") center / cover no-repeat;
+					padding: 25%
+				}
+
+			}
+			&__block3 {
+				display: flex;
+				flex-direction: column;
+				flex: 1 1 33%;
+				.img-shop6 {
+					background: url("../img/shop-img6.png") center / cover no-repeat;
+					
+					flex: 1 1 50%;
+				}
+
+			}
+		}
+	}
+	.shop__row__block2__row{
+		display: flex;
+		flex: 1 1 50%;
+		flex-direction: row;
+		.img-shop7 {
+			background: url("../img/shop-img8.png") center / cover no-repeat;
+			flex: 1 1 50%;
+		}
+		.img-shop8 {
+			background: url("../img/shop-img7.png") center / cover no-repeat;
+			flex: 1 1 50%;
+
+		}
+	}
+	.shop {
+		&__discover {
+			padding: 75px 0px;
+			margin: 0 auto;
+			text-align: center;
+			background-color: #282f35;
+			a{
+				color: white;
+
+			}
+
+		}
+	}
+	.discover-button {
+		padding: 22px 48px;
+		font-size: 14px;
+		@media (max-width: 1000px){
+			padding: 12px 38px;
+			font-size: 14px;
+		}
+		border: 1px solid white;
+		&:hover{
+
+			transition: 0.3s;
+			color: #282f35;
+			background-color: #fff;
+			border: 1px solid #282f35;	
+		}
+
+	}
+	.search {
+		padding: 116px 0px;
+		@media (max-width: 1000px) {
+			padding: 40px 0px;
+		}
+
+		&__block {display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			h2{
+				color: #848789;
+				font-size: 24px;
+				padding: 40px 0px;
+			}
+		}
+	}
+	.block {
+
+		&__logo {
+			
+
+		}
+		&__search {
+			width: 100%;
+			display: flex;
+			height: 100%;
+
+			.block__input{
+				width: 80%;
+				flex: 1 1 80%;
+				input {
+
+					width: 93%;
+					height: 69px;
+					border: 1px solid #d3d7d9;
+					font-size: 20px;
+					font-style: italic;
+					padding-left: 26px;
+					&:focus{
+						font-style: normal;
+						color: black;
+					}
+				}
+			}	
+		}
+
+		&__button {
+			width: 20%;
+
+			height: 69px;
+			flex: 1 1 25%	;
+
+			.btn-suscribe{
+				width: 100%;
+				height: 100%;
+				background-color: #64c29e;
+				font-size: 24px;
+				text-transform: uppercase;
+				color: white;
+				font-style: light;
+			}
+		}
+	}
+	.container-search{
+		max-width: 535px;
+		margin: 0 auto;
+	}
+	.footer {
+		background-color: #f7f7f7;
+		padding: 110px 0px;
+		@media (max-width: 1000px) {
+			padding: 40px 0px;
+		}
+		&__body {
+			display: flex;
+			justify-content: space-between;
+			@media (max-width: 1000px) {
+				flex-direction: column;
+				align-items: center; 
+				text-align: center;
+			}
+		}
+		
+		&__list {
+			list-style: none;
+
+			li:nth-child(1){
+				font-weight: bold;
+				font-style: normal;
+				color: $b1;
+				font-size: 16px;
+			}
+			li
+			{color: #8c8e90;
+				font-style: italic;
+				font-size: 13.9px;
+				line-height: 20px;
+			}
+
+		}
+		&__social {
+			display: flex;
+			img{
+				padding-right: 20px;
+			}
+		}
+		&__handcrafted {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	.social {
+		&__footer-item {}
+	}
+	.handcrafted-text {
+		margin-right: 10px;
+		font-size: 13.9px;
+		font-style: italic;
+		color: #848789;
+	}
+	.handcrafted-logo {
+	}
